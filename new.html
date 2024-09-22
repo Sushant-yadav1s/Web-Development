@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Connect</title>
+
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      /* Navbar Styling */
+      .navbar {
+        background-color: #1a1a1a;
+        padding: 15px 20px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .navbar img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .navbar a {
+        color: #fff;
+        margin-left: 20px;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .navbar a:hover {
+        color: #ddd;
+      }
+
+      .navbar input {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 20px;
+        border: none;
+        width: 100%;
+        max-width: 250px;
+        margin-right: 20px;
+      }
+
+      .navbar .btn {
+        padding: 10px 20px;
+        background-color: #444;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+
+      .navbar .btn:hover {
+        background-color: #555;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #fff;
+        background-image: url("background-image.jpg");
+        background-size: cover;
+        background-position: center;
+        color: #333;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero .buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .hero .btn {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+
+      .hero .btn:hover {
+        background-color: #333;
+      }
+
+      .hero .btn-secondary {
+        background-color: #ddd;
+        color: #000;
+      }
+
+      .hero .btn-secondary:hover {
+        background-color: #bbb;
+      }
+
+      /* Jobs Section */
+      .jobs-section {
+        padding: 50px 20px;
+        background-color: #f9f9f9;
+      }
+
+      .jobs-section h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #333;
+      }
+
+      .job-cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .job-card {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 320px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;
+      }
+
+      .job-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .job-card h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .job-card p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: #666;
+      }
+
+      .job-card .btn {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+
+      .job-card .btn:hover {
+        background-color: #333;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .job-cards {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .navbar input {
+          margin-bottom: 10px;
+          margin-right: 0;
+        }
+
+        .navbar {
+          justify-content: center;
+        }
+
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div>
+        <a href="#">Alumni Connect</a>
+      </div>
+      <div style="display: flex; align-items: center">
+        <input
+          type="text"
+          placeholder="Search alumni, jobs, events..."
+          id="searchInput"
+        />
+        <a href="#">Jobs</a>
+        <a href="#">Events</a>
+        <a href="profile.html">Profile</a>
+        <!-- <a href="#" class="btn" id="joinBtn">Join Now</a> -->
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1>Connect with Alumni, Advance Your Career</h1>
+      <p>
+        Alumni Connect is the premier platform for alumni to network, find jobs,
+        and grow their careers. Join our vibrant community today.
+      </p>
+      <div class="buttons">
+        <a href="signup.html" class="btn" id="joinBtnHero">Join Now</a>
+        <a href="#" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+
+    <div class="jobs-section">
+      <h2>Featured Jobs</h2>
+      <div class="job-cards">
+        <div class="job-card">
+          <h3>Software Engineer</h3>
+          <p>Acme Inc.</p>
+          <p>
+            Seeking a talented software engineer to join our growing team.
+            Experience with React and Node.js required.
+          </p>
+          <a href="#" class="btn">Apply Now</a>
+        </div>
+        <div class="job-card">
+          <h3>Marketing Manager</h3>
+          <p>Globex Corporation</p>
+          <p>
+            We're looking for an experienced marketing manager to lead our
+            digital marketing initiatives. Strong analytical and communication
+            skills required.
+          </p>
+          <a href="#" class="btn">Apply Now</a>
+        </div>
+        <div class="job-card">
+          <h3>Product Designer</h3>
+          <p>Stark Industries</p>
+          <p>
+            Join our design team and help shape the future of our innovative
+            products. Experience with Figma and user-centered design a must.
+          </p>
+          <a href="#" class="btn">Apply Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" style="display: none">
+      <div>
+        <span class="close">&times;</span>
+        <h2>Sign Up</h2>
+        <form>
+          <label for="userType">User Type:</label>
+          <select id="userType">
+            <option value="student">Student</option>
+            <option value="alumni">Alumni</option>
+          </select>
+          <div id="alumniFields" style="display: none">
+            <label for="graduationYear">Graduation Year:</label>
+            <input type="text" id="graduationYear" />
+            <label for="currentCompany">Current Company:</label>
+            <input type="text" id="currentCompany" />
+          </div>
+          <button type="submit">Join Now</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Modal functionality
+      var modal = document.getElementById("signupModal");
+      var btns = document.querySelectorAll("#joinBtn, #joinBtnHero");
+      var span = document.getElementsByClassName("close")[0];
+
+      btns.forEach(function (btn) {
+        btn.onclick = function () {
+          modal.style.display = "block";
+        };
+      });
+
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      // Show/hide alumni fields based on user type selection
+      var userTypeSelect = document.getElementById("userType");
+      var alumniFields = document.getElementById("alumniFields");
+
+      userTypeSelect.addEventListener("change", function () {
+        alumniFields.style.display =
+          userTypeSelect.value === "alumni" ? "block" : "none";
+      });
+
+      // Search functionality (placeholder)
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", function () {
+          const query = this.value.toLowerCase();
+          // Implement search functionality here
+          console.log("Searching for:", query);
+        });
+    </script>
+  </body>
+</html>

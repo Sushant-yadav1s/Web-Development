@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Alumni Connect</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2>User Profile</h2>
+        <div id="profileDetails"></div>
+        <!-- <button onclick="editProfile()">Edit Profile</button> -->
+    </div>
+    <button onclick="window.location.href='editProfile.html?userId=' + userId;">Edit Profile</button>
+
+
+    <script>
+        // Fetch user profile
+        const userId =12 /* Retrieve user ID from login or session */;
+        fetch(`http://localhost:3000/api/auth/profile/${userId}`)
+            .then(response => response.json())
+            .then(data => {
+                const user = data.user;
+                const additionalData = data.additionalData[0] || {}; // Assuming only one result per user
+                
+                document.getElementById('profileDetails').innerHTML = `
+                    <h3>${user.Name}'s Profile</h3>
+                    <p>Name: ${user.Name}</p>
+                    <p>Email: ${user.Email}</p>
+                    <p>User Type: ${user.user_type}</p>
+                    ${user.user_type === 'Student' ? `
+                        <p>Branch: ${additionalData.Branch}</p>
+                        <p>Year: ${additionalData.Year}</p>
+                        <p>CGPA: ${additionalData.CGPA}</p>
+                        <p>Hobbies: ${additionalData.Hobbies}</p>
+                        <p>Internship Experience: ${additionalData.InternshipExperience}</p>
+                        <p>GitHub: <a href="${additionalData.GitHub}" target="_blank">${additionalData.GitHub}</a></p>
+                        <p>Project: ${additionalData.Project}</p>
+                        <p>Resume: <a href="${additionalData.ResumeURL}" target="_blank">View Resume</a></p>
+                    ` : `
+                        <p>Batch: ${additionalData.Batch}</p>
+                        <p>Current Company: ${additionalData.CurrentCompany}</p>
+                        <p>Job Title: ${additionalData.JobTitle}</p>
+                        <p>Industry: ${additionalData.Industry}</p>
+                        <p>Years of Experience: ${additionalData.YearsOfExperience}</p>
+                        <p>Previous Companies: ${additionalData.PreviousCompanies}</p>
+                        <p>Skills: ${additionalData.Skills}</p>
+                        <p>Mentorship Interest: ${additionalData.MentorshipInterest}</p>
+                        <p>Achievements: ${additionalData.Achievements}</p>
+                        <p>Resume: <a href="${additionalData.ResumeURL}" target="_blank">View Resume</a></p>
+                    `}
+                `;
+            })
+            .catch(error => console.error('Error:', error));
+        
+        function editProfile() {
+            // Redirect to an edit page or show a modal for editing user details
+            alert('Edit functionality not yet implemented.');
+        }
+        
+    const params = new URLSearchParams(window.location.search);
+    
+
+    </script>
+
+</body>
+</html>
